@@ -1,8 +1,18 @@
+import axios from "axios";
 import Keycloak from "keycloak-js";
-const keycloak = new Keycloak({
- url: "http://localhost:8080/auth",
- realm: "Keycloak-react-auth",
- clientId: "React-auth",
-});
 
-export default keycloak;
+let keycloakInstance: Keycloak | null = null;
+
+const getKeycloak = () => {
+  if (!keycloakInstance) {
+    console.log("Creating Keycloak instance");
+    keycloakInstance = new Keycloak({
+      url: "http://localhost:8080", 
+      realm: "Develop", 
+      clientId: "DemoOAuth2", 
+    });
+  }
+  return keycloakInstance;
+};
+
+export default getKeycloak;

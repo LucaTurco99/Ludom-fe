@@ -1,9 +1,5 @@
-import { useEffect } from "react";
 import SearchForm from "../../shared/SearchForm";
-import { useSelector } from "react-redux";
-import { RootState } from "../../../store/store";
 import BackButton from "../../core/Backbutton";
-
 
 const teachers = [
     { id: 1, first: "Mark", description: "Math Teacher", icon: "person", link: "mark-profile" },
@@ -17,18 +13,6 @@ const teachers = [
 ];
 
 function Teachers() {
-
-    const teachersForm = useSelector((state: RootState) => state.teachersForm.value);
-
-    useEffect(() => {
-
-        // teachers.forEach((teacher) => {
-        //     if (teacher.first.toLowerCase() === (teachersForm.firstName.toLowerCase()) || teacher.description.toLowerCase() === (teachersForm.lastName.toLowerCase())) {
-        //         console.log("Found:", teacher);
-        //     }
-        // });
-    }, [teachersForm]);
-
 
     return (
         <>
