@@ -1,4 +1,3 @@
-import axios from "axios";
 import Keycloak from "keycloak-js";
 
 let keycloakInstance: Keycloak | null = null;

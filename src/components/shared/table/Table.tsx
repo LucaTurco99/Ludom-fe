@@ -5,7 +5,7 @@ import "./Table.css"; // Import your CSS file for styling
 
 export const Table = () => {
 
-    const [data, setData] = useState([
+    const [data] = useState([
         { id: 1, name: "John Doe", age: 28 },
         { id: 2, name: "Jane Smith", age: 34 },
         { id: 3, name: "Sam Johnson", age: 23 },
@@ -41,7 +41,12 @@ export const Table = () => {
             <Box className="table">
                 {table.getHeaderGroups().map(headerGroup => <Box className="tr" key={headerGroup.id}> 
                     {headerGroup.headers.map(header => (
-                        <Box key={header.id} className="th">{header.column.columnDef.header}</Box>
+                        <Box key={header.id} className="th">
+                        {typeof header.column.columnDef.header === 'function'
+                          ? header.column.columnDef.header(header.getContext())
+                          : header.column.columnDef.header}
+                      </Box>
+                      
                     ))}
                 </Box>)
                 }
