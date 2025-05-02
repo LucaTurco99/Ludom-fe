@@ -1,7 +1,7 @@
 {
-  "homepage": "https://LucaTurco99.github.io/Ludom-fe",
+  "homepage": "https://lucaturco99.github.io/Ludom-fe",
   "name": "my-react-app",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
